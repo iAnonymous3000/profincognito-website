@@ -1,6 +1,6 @@
 baseURL: 'https://profincognito.me/'
 languageCode: 'en-us'
-title: 'ProfIncognito'
+title: 'Professor Incognito'
 theme: 'hugo-WonderMod'
 
 params:
@@ -10,21 +10,20 @@ params:
   ShowCodeCopyButtons: true
   ShowPostNavLinks: true
 
-  # Custom Colors & Font (if supported by theme)
-  primaryColor: "#3498db"  # Primary color for buttons and titles
-  secondaryColor: "#2c3e50"  # Darker background color
-  font: "sans-serif"  # Set a global font if available
+  # Custom Colors & Font (Accessibility improvements)
+  primaryColor: "#3498db"  # Ensure high contrast for readability
+  secondaryColor: "#2c3e50"  # Ensure high contrast
+  font: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif"  # Updated font stack for consistency
 
-  # Custom CSS (if theme supports additional CSS file)
-  customCSS: "/assets/css/custom.css"
+  # Custom CSS (Minified for performance)
+  customCSS: "/assets/css/custom.min.css"
 
   # Homepage Configuration
   profileMode:
     enabled: true
-    title: "ProfIncognito"
+    title: "Sooraj Sathyanarayanan"
     subtitle: "Privacy Researcher & Security Strategist | FIDE Arena Grand Master"
-    imageUrl: "/images/knight.svg"
-    imageTitle: "Privacy & Strategy"
+    imageUrl: "static/images/profile-pic_memoji.jpg"
     buttons:
       - name: "Research"
         url: "/research/"
@@ -37,38 +36,57 @@ params:
       - name: "Support Privacy"
         url: "/donate/"
 
-  # Social & Contact (Privacy-focused platforms)
+  # Social & Contact
   socialIcons:
+    - name: linkedin
+      url: "https://www.linkedin.com/in/sooraj-sathyanarayanan"
+    - name: twitter
+      url: "https://x.com/iAnonymous3000"
     - name: github
       url: "https://github.com/iAnonymous3000"
     - name: mastodon
       url: "https://mastodon.social/@ianonymous3000"
-    - name: nostr
-      url: "npub1dn9rvp2w7hdxgwl6j6rvujywyan559ghmdvrk6huydhzrz7a90fq6vleul"
-    - name: rss
-      url: "index.xml"
+  
 
   # Privacy Enhancements
   privacy:
-    disableFingerprinting: true
+    disableFingerprinting: true  
     googleAnalytics:
       disable: true
     twitter:
-      disable: true
+      disable: false  # Enabled to display Twitter/X content
     instagram:
       disable: true
     youtube:
-      disable: true
+      disable: false
+
+  # Security Headers (Enhance security)
+  securityHeaders:
+    contentSecurityPolicy: "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self';"
+    xFrameOptions: "DENY"
+    xContentTypeOptions: "nosniff"
+    referrerPolicy: "strict-origin-when-cross-origin"
+    permissionsPolicy: "geolocation=(), microphone=()"
 
   # Search Configuration
   search:
     enable: true
     type: "fuse"
 
-  # Assets Configuration
+  # Assets Configuration (Performance improvements)
   assets:
-    disableFingerprinting: true
+    disableFingerprinting: true  
     favicon: "/images/favicon.ico"
+    imageOptimization:
+      enable: true
+      formats: ["webp"]  # Use modern image formats
+      quality: 85
+    lazyLoading: true  # Implement lazy loading for images
+
+  # Accessibility Enhancements
+  accessibility:
+    enableARIA: true  # Custom parameter to enable ARIA labels
+    keyboardNavigation: true  # Ensure site is navigable via keyboard
 
 menu:
   main:
@@ -98,3 +116,6 @@ markup:
     style: dracula
     noClasses: false
     guessSyntax: true
+
+
+

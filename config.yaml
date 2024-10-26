@@ -4,89 +4,97 @@ title: 'ProfIncognito'
 theme: 'hugo-WonderMod'
 
 params:
- defaultTheme: dark
- ShowReadingTime: true 
- ShowToc: true
- ShowCodeCopyButtons: true
- ShowPostNavLinks: true
- 
- # Homepage Configuration
- profileMode:
-   enabled: true
-   title: "ProfIncognito"
-   subtitle: "Privacy Researcher & Security Strategist | FIDE Arena Grand Master"
-   imageUrl: "/images/knight.svg"
-   imageTitle: "Privacy & Strategy"
-   buttons:
-     - name: "Research"
-       url: "/research/"
-     - name: "Security Blog"
-       url: "/posts/"
-     - name: "Open Source"
-       url: "/projects/"
-     - name: "Chess & Security"
-       url: "/chess/"
-     - name: "Support Privacy"
-       url: "/donate/"
+  defaultTheme: dark
+  ShowReadingTime: true
+  ShowToc: true
+  ShowCodeCopyButtons: true
+  ShowPostNavLinks: true
 
- # Social & Contact (Privacy-focused platforms)
- socialIcons:
-   - name: github
-     url: "https://github.com/iAnonymous3000"
-   - name: mastodon
-     url: "@ianonymous3000@mastodon.social"
-   - name: nostr
-     url: "npub1dn9rvp2w7hdxgwl6j6rvujywyan559ghmdvrk6huydhzrz7a90fq6vleul"
-   - name: rss
-     url: "index.xml"
+  # Custom Colors & Font (if supported by theme)
+  primaryColor: "#3498db"  # Primary color for buttons and titles
+  secondaryColor: "#2c3e50"  # Darker background color
+  font: "sans-serif"  # Set a global font if available
 
- # Privacy Enhancements
- privacy:
-   disableFingerprinting: true
-   googleAnalytics:
-     disable: true
-   twitter:
-     disable: true
-   instagram:
-     disable: true
-   youtube:
-     disable: true
+  # Custom CSS (if theme supports additional CSS file)
+  customCSS: "/assets/css/custom.css"
 
- # Search Configuration
- search:
-   enable: true
-   type: "fuse"
+  # Homepage Configuration
+  profileMode:
+    enabled: true
+    title: "ProfIncognito"
+    subtitle: "Privacy Researcher & Security Strategist | FIDE Arena Grand Master"
+    imageUrl: "/images/knight.svg"
+    imageTitle: "Privacy & Strategy"
+    buttons:
+      - name: "Research"
+        url: "/research/"
+      - name: "Security Blog"
+        url: "/posts/"
+      - name: "Open Source"
+        url: "/projects/"
+      - name: "Chess & Security"
+        url: "/chess/"
+      - name: "Support Privacy"
+        url: "/donate/"
 
- # Assets Configuration
- assets:
-   disableFingerprinting: true
-   favicon: "/images/favicon.ico"
+  # Social & Contact (Privacy-focused platforms)
+  socialIcons:
+    - name: github
+      url: "https://github.com/iAnonymous3000"
+    - name: mastodon
+      url: "https://mastodon.social/@ianonymous3000"
+    - name: nostr
+      url: "npub1dn9rvp2w7hdxgwl6j6rvujywyan559ghmdvrk6huydhzrz7a90fq6vleul"
+    - name: rss
+      url: "index.xml"
 
- menu:
-   main:
-     - identifier: posts
-       name: Blog
-       url: /posts/
-       weight: 10
-     - identifier: research
-       name: Research
-       url: /research/
-       weight: 20
-     - identifier: projects
-       name: Projects
-       url: /projects/
-       weight: 30
-     - identifier: chess
-       name: Chess
-       url: /chess/
-       weight: 40
-     - identifier: about
-       name: About
-       url: /about/
-       weight: 50
+  # Privacy Enhancements
+  privacy:
+    disableFingerprinting: true
+    googleAnalytics:
+      disable: true
+    twitter:
+      disable: true
+    instagram:
+      disable: true
+    youtube:
+      disable: true
+
+  # Search Configuration
+  search:
+    enable: true
+    type: "fuse"
+
+  # Assets Configuration
+  assets:
+    disableFingerprinting: true
+    favicon: "/images/favicon.ico"
+
+menu:
+  main:
+    - identifier: posts
+      name: Blog
+      url: /posts/
+      weight: 10
+    - identifier: research
+      name: Research
+      url: /research/
+      weight: 20
+    - identifier: projects
+      name: Projects
+      url: /projects/
+      weight: 30
+    - identifier: chess
+      name: Chess
+      url: /chess/
+      weight: 40
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 50
 
 markup:
- highlight:
-   style: dracula
-   noClasses: false
-   guessSyntax: true
+  highlight:
+    style: dracula
+    noClasses: false
+    guessSyntax: true

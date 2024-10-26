@@ -1,111 +1,149 @@
+# Basic Site Configuration
 baseURL: 'https://profincognito.me/'
 languageCode: 'en-us'
 title: 'Professor Incognito'
 theme: 'hugo-WonderMod'
 copyright: '[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)'
 
+# Primary Parameters
 params:
-  defaultTheme: dark
-  ShowReadingTime: true
-  ShowToc: true
-  ShowCodeCopyButtons: true
-  ShowPostNavLinks: true
+ # Theme Settings
+ defaultTheme: dark
+ ShowReadingTime: true
+ ShowToc: true
+ ShowCodeCopyButtons: true
+ ShowPostNavLinks: true
 
-  # Custom Colors & Font (Accessibility improvements)
-  primaryColor: "#3498db"  # Ensure high contrast for readability
-  secondaryColor: "#2c3e50"  # Ensure high contrast
-  font: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif"  # Updated font stack for consistency
+ # Security Headers - Balanced for functionality and security
+ securityHeaders:
+   contentSecurityPolicy: >-
+     default-src 'self';
+     script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com;
+     style-src 'self' 'unsafe-inline';
+     img-src 'self' data: https://avatars.githubusercontent.com;
+     font-src 'self' data:;
+     connect-src 'self' https://cloudflareinsights.com;
+     frame-ancestors 'none';
+     form-action 'self';
+     upgrade-insecure-requests;
+     block-all-mixed-content;
+   xFrameOptions: "DENY"
+   xContentTypeOptions: "nosniff"
+   referrerPolicy: "strict-origin-when-cross-origin"
+   permissionsPolicy: "geolocation=(), microphone=(), camera=(), payment=()"
+   strictTransportSecurity: "max-age=31536000; includeSubDomains"
 
-  # Custom CSS (Minified for performance)
-  customCSS: "/assets/css/custom.min.css"
+ # Privacy Settings - Essential services only
+ privacy:
+   disableFingerprinting: true
+   cloudflare:
+     enable: true
+   googleAnalytics:
+     disable: true
+   instagram:
+     disable: true
+   youtube:
+     disable: false
+     privacyEnhanced: true
+   twitter:
+     disable: false
+     enableDNT: true
 
-  # Homepage Configuration
-  profileMode:
-    enabled: true
-    title: "Sooraj Sathyanarayanan"
-    subtitle: "Privacy Researcher & Security Strategist | FIDE Arena Grand Master"
-    imageUrl: "https://avatars.githubusercontent.com/u/32236127?v=4"
-    buttons:
-      - name: Portfolio
-        url: "https://linksta.cc/@ianonymous3000"
+ # Asset Configuration
+ assets:
+   disableFingerprinting: true
+   favicon: "/images/favicon.ico"
+   imageOptimization:
+     enable: true
+     formats: ["webp"]
+     quality: 85
+   lazyLoading: true
 
-  # Social & Contact
-  socialIcons:
-    - name: linkedin
-      url: "https://www.linkedin.com/in/sooraj-sathyanarayanan"
-    - name: twitter
-      url: "https://x.com/iAnonymous3000"
-    - name: github
-      url: "https://github.com/iAnonymous3000"
-    - name: mastodon
-      url: "https://mastodon.social/@ianonymous3000"
-  
+ # Homepage Configuration
+ profileMode:
+   enabled: true
+   title: "Sooraj Sathyanarayanan"
+   subtitle: "Privacy Researcher & Security Strategist | FIDE Arena Grand Master"
+   imageUrl: "https://avatars.githubusercontent.com/u/32236127?v=4"
+   buttons:
+     - name: Portfolio
+       url: "https://linksta.cc/@ianonymous3000"
 
-  # Privacy Enhancements
-  privacy:
-    disableFingerprinting: true  
-    googleAnalytics:
-      disable: true
-    twitter:
-      disable: false  # Enabled to display Twitter/X content
-    instagram:
-      disable: true
-    youtube:
-      disable: false
+ # Social Links with Mastodon Verification
+ socialIcons:
+   - name: linkedin
+     url: "https://www.linkedin.com/in/sooraj-sathyanarayanan"
+     params:
+       rel: "noopener"
+   - name: twitter
+     url: "https://x.com/iAnonymous3000"
+     params:
+       rel: "noopener"
+   - name: github
+     url: "https://github.com/iAnonymous3000"
+     params:
+       rel: "noopener"
+   - name: mastodon
+     url: "https://mastodon.social/@ianonymous3000"
+     params:
+       rel: "me noopener"
 
-  # Security Headers (Enhance security)
-  securityHeaders:
-    contentSecurityPolicy: "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self';"
-    xFrameOptions: "DENY"
-    xContentTypeOptions: "nosniff"
-    referrerPolicy: "strict-origin-when-cross-origin"
-    permissionsPolicy: "geolocation=(), microphone=()"
+ # Cloudflare Settings
+ cloudflare:
+   analytics: true
+   cacheTTL: "4h"
+   alwaysUseHTTPS: true
+   minify:
+     html: true
+     css: true
+     js: true
 
-  # Search Configuration
-  search:
-    enable: true
-    type: "fuse"
+# Output Settings
+outputs:
+ home:
+   - HTML
+   - RSS
+ section:
+   - HTML
 
-  # Assets Configuration (Performance improvements)
-  assets:
-    disableFingerprinting: true  
-    favicon: "/images/favicon.ico"
-    imageOptimization:
-      enable: true
-      formats: ["webp"]  # Use modern image formats
-      quality: 85
-    lazyLoading: true  # Implement lazy loading for images
+# Robot Control
+enableRobotsTXT: true
+robotsTXT: |
+ User-agent: *
+ Disallow: /private/
+ Disallow: /search/
+ Allow: /posts/
+ Allow: /research/
+ Allow: /projects/
+ Sitemap: https://profincognito.me/sitemap.xml
 
-  # Accessibility Enhancements
-  accessibility:
-    enableARIA: true  # Custom parameter to enable ARIA labels
-    keyboardNavigation: true  # Ensure site is navigable via keyboard
-
+# Navigation Menu
 menu:
-  main:
-    - identifier: posts
-      name: Blog
-      url: /posts/
-      weight: 10
-    - identifier: research
-      name: Research
-      url: /research/
-      weight: 20
-    - identifier: projects
-      name: Projects
-      url: /projects/
-      weight: 30
-    - identifier: chess
-      name: Chess
-      url: /chess/
-      weight: 40
-    - identifier: about
-      name: About
-      url: /about/
-      weight: 50
+ main:
+   - identifier: posts
+     name: Blog
+     url: /posts/
+     weight: 10
+   - identifier: research
+     name: Research
+     url: /research/
+     weight: 20
+   - identifier: projects
+     name: Projects
+     url: /projects/
+     weight: 30
+   - identifier: chess
+     name: Chess
+     url: /chess/
+     weight: 40
+   - identifier: about
+     name: About
+     url: /about/
+     weight: 50
 
+# Syntax Highlighting
 markup:
-  highlight:
-    style: dracula
-    noClasses: false
-    guessSyntax: true
+ highlight:
+   style: dracula
+   noClasses: false
+   guessSyntax: true

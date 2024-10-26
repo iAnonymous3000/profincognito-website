@@ -2,6 +2,7 @@ baseURL: 'https://profincognito.me/'
 languageCode: 'en-us'
 title: 'Professor Incognito'
 theme: 'hugo-WonderMod'
+copyright: '[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)'
 
 params:
   defaultTheme: dark
@@ -23,18 +24,10 @@ params:
     enabled: true
     title: "Sooraj Sathyanarayanan"
     subtitle: "Privacy Researcher & Security Strategist | FIDE Arena Grand Master"
-    imageUrl: "static/images/profile-pic_memoji.jpg"
+    imageUrl: "https://avatars.githubusercontent.com/u/32236127?v=4"
     buttons:
-      - name: "Research"
-        url: "/research/"
-      - name: "Security Blog"
-        url: "/posts/"
-      - name: "Open Source"
-        url: "/projects/"
-      - name: "Chess & Security"
-        url: "/chess/"
-      - name: "Support Privacy"
-        url: "/donate/"
+      - name: Portfolio
+        url: "https://linksta.cc/@ianonymous3000"
 
   # Social & Contact
   socialIcons:
@@ -116,6 +109,3 @@ markup:
     style: dracula
     noClasses: false
     guessSyntax: true
-
-
-

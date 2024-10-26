@@ -7,143 +7,155 @@ copyright: '[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)'
 
 # Primary Parameters
 params:
- # Theme Settings
- defaultTheme: dark
- ShowReadingTime: true
- ShowToc: true
- ShowCodeCopyButtons: true
- ShowPostNavLinks: true
+  # Theme Settings
+  defaultTheme: dark
+  ShowReadingTime: true
+  ShowToc: true
+  ShowCodeCopyButtons: true
+  ShowPostNavLinks: true
 
- # Security Headers - Balanced for functionality and security
- securityHeaders:
-   contentSecurityPolicy: >-
-     default-src 'self';
-     script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com;
-     style-src 'self' 'unsafe-inline';
-     img-src 'self' data: https://avatars.githubusercontent.com;
-     font-src 'self' data:;
-     connect-src 'self' https://cloudflareinsights.com;
-     frame-ancestors 'none';
-     form-action 'self';
-     upgrade-insecure-requests;
-     block-all-mixed-content;
-   xFrameOptions: "DENY"
-   xContentTypeOptions: "nosniff"
-   referrerPolicy: "strict-origin-when-cross-origin"
-   permissionsPolicy: "geolocation=(), microphone=(), camera=(), payment=()"
-   strictTransportSecurity: "max-age=31536000; includeSubDomains"
+  # Meta Tags and Social Sharing
+  description: "Privacy Researcher & Security Strategist | FIDE Arena Grand Master"
+  images: 
+    - "/images/site-feature-image.webp"
+  opengraph: true
+  twitter:
+    card: "summary_large_image"
+    site: "@iAnonymous3000"
+  schema:
+    publisherType: "Person"
+    publisherName: "Sooraj Sathyanarayanan"
 
- # Privacy Settings - Essential services only
- privacy:
-   disableFingerprinting: true
-   cloudflare:
-     enable: true
-   googleAnalytics:
-     disable: true
-   instagram:
-     disable: true
-   youtube:
-     disable: false
-     privacyEnhanced: true
-   twitter:
-     disable: false
-     enableDNT: true
+  # Security Headers - Balanced for functionality and security
+  securityHeaders:
+    contentSecurityPolicy: >-
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com;
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https://avatars.githubusercontent.com;
+      font-src 'self' data:;
+      connect-src 'self' https://cloudflareinsights.com;
+      frame-ancestors 'none';
+      form-action 'self';
+      upgrade-insecure-requests;
+      block-all-mixed-content;
+    xFrameOptions: "DENY"
+    xContentTypeOptions: "nosniff"
+    referrerPolicy: "strict-origin-when-cross-origin"
+    permissionsPolicy: "geolocation=(), microphone=(), camera=(), payment=()"
+    strictTransportSecurity: "max-age=31536000; includeSubDomains"
 
- # Asset Configuration
- assets:
-   disableFingerprinting: true
-   favicon: "/images/favicon.ico"
-   imageOptimization:
-     enable: true
-     formats: ["webp"]
-     quality: 85
-   lazyLoading: true
+  # Privacy Settings - Essential services only
+  privacy:
+    disableFingerprinting: true
+    cloudflare:
+      enable: true
+    googleAnalytics:
+      disable: true
+    instagram:
+      disable: true
+    youtube:
+      disable: false
+      privacyEnhanced: true
+    twitter:
+      disable: false
+      enableDNT: true
 
- # Homepage Configuration
- profileMode:
-   enabled: true
-   title: "Sooraj Sathyanarayanan"
-   subtitle: "Privacy Researcher & Security Strategist | FIDE Arena Grand Master"
-   imageUrl: "https://avatars.githubusercontent.com/u/32236127?v=4"
-   buttons:
-     - name: Portfolio
-       url: "https://linksta.cc/@ianonymous3000"
+  # Asset Configuration
+  assets:
+    disableFingerprinting: true
+    favicon: "/images/favicon.ico"
+    imageOptimization:
+      enable: true
+      formats: ["webp"]
+      quality: 85
+    lazyLoading: true
 
- # Social Links with Mastodon Verification
- socialIcons:
-   - name: linkedin
-     url: "https://www.linkedin.com/in/soorajsathyanarayanan"
-     params:
-       rel: "noopener"
-   - name: twitter
-     url: "https://x.com/iAnonymous3000"
-     params:
-       rel: "noopener"
-   - name: github
-     url: "https://github.com/iAnonymous3000"
-     params:
-       rel: "noopener"
-   - name: mastodon
-     url: "https://mastodon.social/@ianonymous3000"
-     params:
-       rel: "me noopener"
+  # Homepage Configuration
+  profileMode:
+    enabled: true
+    title: "Sooraj Sathyanarayanan"
+    subtitle: "Privacy Researcher & Security Strategist | FIDE Arena Grand Master"
+    imageUrl: "https://avatars.githubusercontent.com/u/32236127?v=4"
+    buttons:
+      - name: Portfolio
+        url: "https://linksta.cc/@ianonymous3000"
 
- # Cloudflare Settings
- cloudflare:
-   analytics: true
-   cacheTTL: "4h"
-   alwaysUseHTTPS: true
-   minify:
-     html: true
-     css: true
-     js: true
+  # Social Links with Mastodon Verification
+  socialIcons:
+    - name: linkedin
+      url: "https://www.linkedin.com/in/soorajsathyanarayanan"
+      params:
+        rel: "noopener"
+    - name: twitter
+      url: "https://x.com/iAnonymous3000"
+      params:
+        rel: "noopener"
+    - name: github
+      url: "https://github.com/iAnonymous3000"
+      params:
+        rel: "noopener"
+    - name: mastodon
+      url: "https://mastodon.social/@ianonymous3000"
+      params:
+        rel: "me noopener"
+
+  # Cloudflare Settings
+  cloudflare:
+    analytics: true
+    cacheTTL: "4h"
+    alwaysUseHTTPS: true
+    minify:
+      html: true
+      css: true
+      js: true
 
 # Output Settings
 outputs:
- home:
-   - HTML
-   - RSS
- section:
-   - HTML
+  home:
+    - HTML
+    - RSS
+  section:
+    - HTML
 
 # Robot Control
 enableRobotsTXT: true
 robotsTXT: |
- User-agent: *
- Disallow: /private/
- Disallow: /search/
- Allow: /posts/
- Allow: /research/
- Allow: /projects/
- Sitemap: https://profincognito.me/sitemap.xml
+  User-agent: *
+  Disallow: /private/
+  Disallow: /search/
+  Allow: /posts/
+  Allow: /research/
+  Allow: /projects/
+  Sitemap: https://profincognito.me/sitemap.xml
 
 # Navigation Menu
 menu:
- main:
-   - identifier: posts
-     name: Blog
-     url: /posts/
-     weight: 10
-   - identifier: research
-     name: Research
-     url: /research/
-     weight: 20
-   - identifier: projects
-     name: Projects
-     url: /projects/
-     weight: 30
-   - identifier: chess
-     name: Chess
-     url: /chess/
-     weight: 40
-   - identifier: about
-     name: About
-     url: /about/
-     weight: 50
+  main:
+    - identifier: posts
+      name: Blog
+      url: /posts/
+      weight: 10
+    - identifier: research
+      name: Research
+      url: /research/
+      weight: 20
+    - identifier: projects
+      name: Projects
+      url: /projects/
+      weight: 30
+    - identifier: chess
+      name: Chess
+      url: /chess/
+      weight: 40
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 50
 
 # Syntax Highlighting
 markup:
- highlight:
-   style: dracula
-   noClasses: false
-   guessSyntax: true
+  highlight:
+    style: dracula
+    noClasses: false
+    guessSyntax: true

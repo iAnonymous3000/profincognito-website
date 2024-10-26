@@ -72,7 +72,7 @@ params:
  # Social Links with Mastodon Verification
  socialIcons:
    - name: linkedin
-     url: "https://www.linkedin.com/in/sooraj-sathyanarayanan"
+     url: "https://www.linkedin.com/in/soorajsathyanarayanan"
      params:
        rel: "noopener"
    - name: twitter

@@ -14,38 +14,63 @@ params:
   ShowCodeCopyButtons: true
   ShowPostNavLinks: true
 
-  # Meta Tags and Social Sharing
+  # Enhanced Meta Tags - Minimal but Effective
   description: "Privacy Researcher & Security Strategist | FIDE Arena Grand Master"
   images: 
     - "/images/site-feature-image.webp"
+  
+  # Open Graph - Essential Only
   opengraph: true
+  og:
+    type: "website"
+    title: "Professor Incognito"
+    description: "Privacy Researcher & Security Strategist | FIDE Arena Grand Master"
+    image: "/images/site-feature-image.webp"
+    siteName: "Professor Incognito"
+
+  # Twitter Cards - Minimal
   twitter:
     card: "summary_large_image"
     site: "@iAnonymous3000"
+    image: "/images/site-feature-image.webp"
+    
+  # Schema.org - Professional Focus
   schema:
-    publisherType: "Person"
-    publisherName: "Sooraj Sathyanarayanan"
+    type: "Person"
+    name: "Professor Incognito"
+    jobTitle: "Privacy Researcher & Security Strategist"
+    url: "https://profincognito.me"
+    image: "/images/site-feature-image.webp"
+    award: "FIDE Arena Grand Master"
 
-  # Security Headers - Balanced for functionality and security
+  # Balanced Security Headers
   securityHeaders:
     contentSecurityPolicy: >-
       default-src 'self';
       script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com;
       style-src 'self' 'unsafe-inline';
-      img-src 'self' data: https://avatars.githubusercontent.com;
+      img-src 'self' data: https://avatars.githubusercontent.com https://*.githubusercontent.com;
       font-src 'self' data:;
       connect-src 'self' https://cloudflareinsights.com;
+      frame-src 'self' https://www.youtube-nocookie.com;
       frame-ancestors 'none';
       form-action 'self';
+      base-uri 'self';
       upgrade-insecure-requests;
       block-all-mixed-content;
     xFrameOptions: "DENY"
     xContentTypeOptions: "nosniff"
     referrerPolicy: "strict-origin-when-cross-origin"
-    permissionsPolicy: "geolocation=(), microphone=(), camera=(), payment=()"
+    permissionsPolicy: >-
+      accelerometer=(),
+      camera=(),
+      geolocation=(),
+      microphone=(),
+      payment=(),
+      usb=()
     strictTransportSecurity: "max-age=31536000; includeSubDomains"
 
-  # Privacy Settings - Essential services only
+  # Balanced Privacy Settings
   privacy:
     disableFingerprinting: true
     cloudflare:
@@ -74,31 +99,31 @@ params:
   # Homepage Configuration
   profileMode:
     enabled: true
-    title: "Sooraj Sathyanarayanan"
+    title: "Professor Incognito"
     subtitle: "Privacy Researcher & Security Strategist | FIDE Arena Grand Master"
     imageUrl: "https://avatars.githubusercontent.com/u/32236127?v=4"
     buttons:
       - name: Portfolio
         url: "https://linksta.cc/@ianonymous3000"
 
-  # Social Links with Mastodon Verification
+  # Social Links with Privacy Protection
   socialIcons:
     - name: linkedin
       url: "https://www.linkedin.com/in/soorajsathyanarayanan"
       params:
-        rel: "noopener"
+        rel: "noopener noreferrer"
     - name: twitter
       url: "https://x.com/iAnonymous3000"
       params:
-        rel: "noopener"
+        rel: "noopener noreferrer"
     - name: github
       url: "https://github.com/iAnonymous3000"
       params:
-        rel: "noopener"
+        rel: "noopener noreferrer"
     - name: mastodon
       url: "https://mastodon.social/@ianonymous3000"
       params:
-        rel: "me noopener"
+        rel: "me noopener noreferrer"
 
   # Cloudflare Settings
   cloudflare:
@@ -118,15 +143,17 @@ outputs:
   section:
     - HTML
 
-# Robot Control
+# Enhanced Robot Control
 enableRobotsTXT: true
 robotsTXT: |
   User-agent: *
   Disallow: /private/
   Disallow: /search/
+  Disallow: /cdn-cgi/
   Allow: /posts/
   Allow: /research/
   Allow: /projects/
+  Allow: /chess/
   Sitemap: https://profincognito.me/sitemap.xml
 
 # Navigation Menu
